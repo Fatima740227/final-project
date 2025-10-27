@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* dark background */
+    font-family: 'Baloo Tamma 2', 'Roboto Slab', sans-serif;
+    color:white;
+}
+/* ---------NAVIGATION BAR ----------*/
+.navigation {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5346);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4)
+}
+/* Logo + Title */
+.navigation i{
+    animation: spin 3s linear infinite;
+}
+.navigation h5 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform:uppercase;
+}
+/* ---------- NAVIGATION LINKS ---------- */
+.navigation link {
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+/* Hover Effects */
+.navigation-link:hover {
+    color: #ffd700 !important;
+    text-decoration: none;
+}
+/*Underline Glow Animation*/
+.navigation-link::after {
+    content: "";
+    position:absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffd700;
+    transition: width 0.3s ease;
+}
+
+.navigation-link:hover::after {
+width: 100%;
+}
+
+@keyframes spin {
+    from {transform rotate(0deg); }
+    to {transform rotate(360deg);}
+}
+@media (max-width: 768px) {
+    .navigation h5 {
+        font-size: 1rem;
+    }
+    .navigation-link {
+        font-size: 0.8rem;
+    }
+}
+.about-section {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    border-top: 2px solid #203a43;
+    border-bottom: 2px solid #203a43;
+    text-align: left;
+}
+.section-title {
+font-size: 2rem;
+font-weight: 700;
+margin-bottom: 20px;
+color: #ffd700;
+letter-spacing: 1px;
+position: relative;
+}
+.section-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 60px;
+    height: 3px;
+    background-color: #ffd700;
+}
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+.highlight{
+    color: #ffd700
+    font-weight: 600;
+}
+.about-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.about-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
