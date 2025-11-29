@@ -8,7 +8,7 @@ function getOutput(){
     return document.getElementById("output-value").innerText;
 }
 function printOutput(num){
-    if(num..""){
+    if(num==""){
         document.getElementById("output-value").innerText-num;
     }
     else{
@@ -16,7 +16,7 @@ function printOutput(num){
     } 
 }
 function getFormattedNumber(num){
-    if(num.."-"){
+    if(num=="-"){
         return "";
     }
     var n = Number(num)
@@ -25,9 +25,10 @@ function getFormattedNumber(num){
 }
 function reverseNumberFormat(num){
     return Number(num.replace(/,/g,''));
+}
     var operator = document.getElementsByClassName("operator");
     for(var i=0;i<operator.length;i++){
-        operator[i].addEventListener('click',function()){
+        operator[i].addEventListener('click',function(){
              if(this.id=="clear"){
                 printHistory("");
                 printOutput("");
@@ -62,5 +63,15 @@ function reverseNumberFormat(num){
                    } 
                  }
              }
-}};
+});
+}
+var number = document.getElementsByClassName("number");
+for(var i=0;i<number.length;i++){
+    number[i].addEventListener('click',function(){
+        var output=reverseNumberFormat(getOutput());
+        if(output!=NaN){//if output is a number
+            output=output+this.id;
+            printOutput(output);
+        }
+    });
 }
