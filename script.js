@@ -2,17 +2,17 @@ function getHistory(){
     return document.getElementById("history-value").innerText;
 }
 function printHistory(num){
-    document.getElementById("history-value").innerText-num;
+    document.getElementById("history-value").innerText=num;
 }
 function getOutput(){
     return document.getElementById("output-value").innerText;
 }
 function printOutput(num){
     if(num==""){
-        document.getElementById("output-value").innerText-num;
+        document.getElementById("output-value").innerText=num;
     }
     else{
-        document.getElementById("output-value").innerText-getFormattedNumber(num);
+        document.getElementById("output-value").innerText=getFormattedNumber(num);
     } 
 }
 function getFormattedNumber(num){
@@ -24,6 +24,7 @@ function getFormattedNumber(num){
     return value;
 }
 function reverseNumberFormat(num){
+
     return Number(num.replace(/,/g,''));
 }
     var operator = document.getElementsByClassName("operator");
@@ -49,7 +50,7 @@ function reverseNumberFormat(num){
                     }
                 }
                  if (output != "" || history!=""){
-                    output= output==""?output:reverseNumberFormat(getOutput);
+                    output= output==""?output:reverseNumberFormat(getOutput());
                     history=history+output;
                     if(this.id=="="){
                         var result=eval(history);
@@ -69,7 +70,7 @@ var number = document.getElementsByClassName("number");
 for(var i=0;i<number.length;i++){
     number[i].addEventListener('click',function(){
         var output=reverseNumberFormat(getOutput());
-        if(output!=NaN){//if output is a number
+        if(!isNaN(output)){//if output is a number
             output=output+this.id;
             printOutput(output);
         }
