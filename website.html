@@ -2,20 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Restaurant Website</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Portfolio</title>
     <style>
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
-            background: #f4f4f7;
+            font-family: Arial, sans-serif;
+            background: #f7f5f2;
+            color: #333;
         }
 
-        /* -----------------------------------------------------------
-           NAVIGATION BAR
-        ----------------------------------------------------------- */
-        nav {
+        /* NAV BAR */
+  nav {
             background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
             background-size: cover;
             background-position: center;
@@ -38,65 +37,78 @@
             letter-spacing: 1px;
         }
 
-        /* -----------------------------------------------------------
-           ABOUT SECTION
-        ----------------------------------------------------------- */
-        .about-section {
-            text-align: center;
-            padding: 50px 40px;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
-            color: #333;
-            border-bottom: 2px solid #e4e4e4;
-        }
 
-        .about-section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .about-section p {
-            width: 70%;
-            margin: auto;
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        /* -----------------------------------------------------------
-           INFO BOXES
-        ----------------------------------------------------------- */
-        .info-boxes {
+        /* HERO SECTION */
+        .hero {
+            background-color: #1b1c33;
+            background-size: cover;
+            background-position: center;
+            height: 150px;
             display: flex;
-            justify-content: space-between;
-            padding: 40px 70px;
-            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+            font-size: 50px;
+            font-weight: bolder;
         }
 
-        .box {
-            flex: 1;
-            background: white;
-            padding: 25px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
-
-        .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .box h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
-            color: #444;
-        }
-
-        .box p {
-            margin: 6px 0;
-            color: #555;
+        /* INFO SECTION */
+        .info-section {
+            text-align: center;
+            max-width: 750px;
+            margin: 40px auto;
             line-height: 1.6;
+            font-size: 18px;
+        }
+
+        /* THREE COLUMNS */
+        .three-cols {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .col {
+            width: 30%;
+        }
+
+        .col h3 {
+            margin-bottom: 10px;
+            color: #c78f2b;
+        }
+
+        /* SOCIAL SECTION */
+        .social-section {
+            background: #1b1c33;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .social-links a {
+            margin: 10px;
+            padding: 10px 20px;
+            border: 1px solid #e0b973;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            background: #e0b973;
+            color: black;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: #e0b973;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -111,44 +123,55 @@
         <a href="#">CONTACT</a>
     </nav>
 
-    <!-- ABOUT SECTION -->
-    <div class="about-section">
-        <h2>Why Our Restaurant is the Best</h2>
+    <div class="hero">Welcome to Fatima's Kitchen</div>
+
+    <section class="info-section">
+        <h2>Why Our Restaurant Is the Best</h2>
         <p>
-            Enjoy an unforgettable dining experience with fresh ingredients,
-            handcrafted recipes, and a warm, welcoming atmosphere.
-            From classic favorites to unique flavors, our chefs bring passion
-            and excellence to every dish we serve.
-        </p>
-    </div>
+Enjoy an unforgettable dining experience with fresh ingredients,
+handcrafted recipes, and a warm, welcoming atmosphere.
+From classic favorites to unique flavors, our chefs bring passion
+and excellence to every dish we serve.        </p>
+    </section>
 
-    <!-- INFO BOXES -->
-    <div class="info-boxes">
-
-        <div class="box">
-            <h3>Make a Booking</h3>
-            <p>Leave your number and our team will contact you to confirm your reservation.</p>
-            <p><strong>Phone:</strong> 0303-5387678</p>
+    <section class="three-cols">
+        <div class="col">
+            <h3>Make a booking</h3>
+            <p>Please leave your number; we will call to make a reservation.</p>
         </div>
-
-        <div class="box">
-            <h3>Opening Times</h3>
-            <p>Monday – Thursday: 08:00 — 22:00</p>
-            <p>Friday – Saturday: 09:00 — 23:00</p>
-            <p>Sunday: 10:00 — 17:00</p>
+        <div class="col">
+            <h3>Opening times</h3>
+            <p>Monday—Thursday: 08:00 — 22:00<br>
+                Friday—Saturday: 09:00 — 23:00<br>
+                Sunday: 10:00 — 17:00
+            </p>
         </div>
-
-        <div class="box">
+        <div class="col">
             <h3>Contact</h3>
-            <p>0303-5387678</p>
-            <p>Bahria Food Street</p>
-            <p>Rawalpindi, Pakistan</p>
+            <p>0303-5387678<br>
+                Bahria Food Street<br>
+                Rawalpindi, Pakistan
+            </p>
         </div>
+    </section>
 
-    </div>
+    <section class="social-section">
+        <h2>Let's be friends</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/fatima_digitial_diary?igsh=MXY3eWlva2YyOXVsbQ==" target="_blank">Instagram</a>
+            <a href="https://youtube.com/@fatimaskidscorner9187?si=eRbnBFWGskPnvvVW" target="_blank">YouTube</a>
+            <a href="mailto:fatima.12official@gmail.com">Email</a>
+        </div>
+    </section>
+
+    <footer>
+        Copyright © 2025 | All Rights Reserved by Fatima's Kitchen
+    </footer>
 
 </body>
 
 </html>
+
+
 
     
