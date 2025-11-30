@@ -42,6 +42,10 @@
         button:hover {
             background-color: black;
         }
+         #msg {
+             color: red;
+              margin-top: 10px;
+            }
     </style>
 </head>
 
@@ -57,20 +61,47 @@
     <p>Your Account Balance is : Rs.<span id="balance">0</span></p>
         <script>
              let balance = 0;
-                function credit() {
-                    let amt = Number(document.getElementById("amount").value);
-                    if (amt > 0) {
-                        balance = balance + amt;
-                        document.getElementById("balance").innerText = balance;
-                    }
+             var msg = document.getElementById("msg");
+                if (!msg) {
+                    msg = document.createElement("p");
+                    msg.id = "msg";
+                    msg.style.color = "red";
+                    document.body.appendChild(msg);
                 }
-                function debit() {
-                    let amt = Number(document.getElementById("amount").value);
-                    if (amt > 0 && amt <= balance) {
-                        balance = balance - amt;
-                        document.getElementById("balance").innerText = balance;
-                    }
+         function credit() {
+                let amt = Number(document.getElementById("amount").value);
+                if (document.getElementById("amount").value === "") {
+                    msg.innerText = "Please enter amount.";
+                    return;
                 }
+                if (amt <= 0) {
+                    msg.innerText = "Please enter amount greater than 0";
+                    return;
+                }
+                balance = balance + amt;
+                document.getElementById("balance").innerText = balance;
+                msg.innerText = "";
+            }
+    function debit() {
+        let amt = Number(document.getElementById("amount").value);
+
+        if (document.getElementById("amount").value === "") {
+            msg.innerText = "Please enter amount.";
+            return;
+        }
+        if (amt <= 0) {
+            msg.innerText = "Please enter amount greater than 0";
+            return;
+        }
+        if (amt > balance) {
+            msg.innerText = "Entered amount is greater than available balance.";
+            return;
+        }
+        balance = balance - amt;
+        document.getElementById("balance").innerText = balance;
+        msg.innerText = "";
+    }
+
             var current_balance_el = document.getElementById("current_balance");
             var entered_amount_el = document.getElementById("amount");
             document.getElementById("creditBtn").addEventListener("click", function () {
